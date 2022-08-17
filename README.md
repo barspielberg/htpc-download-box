@@ -25,25 +25,25 @@ All automated.
     - [Setup a VPN Container](#setup-a-vpn-container)
       - [Introduction](#introduction)
       - [privateinternetaccess.com custom setup](#privateinternetaccesscom-custom-setup)
-      - [Docker container](#docker-container)
+      - [Docker container](#docker-container-1)
     - [Setup Jackett](#setup-jackett)
-      - [Docker container](#docker-container)
+      - [Docker container](#docker-container-2)
       - [Configuration and usage](#configuration-and-usage)
     - [Setup NZBGet](#setup-nzbget)
-      - [Docker container](#docker-container)
+      - [Docker container](#docker-container-3)
       - [Configuration and usage](#configuration-and-usage)
     - [Setup Plex](#setup-plex)
       - [Media Server Docker Container](#media-server-docker-container)
-      - [Configuration](#configuration)
+      - [Configuration](#configuration-1)
       - [Setup Plex clients](#setup-plex-clients)
     - [Setup Sonarr](#setup-sonarr)
-      - [Docker container](#docker-container)
-      - [Configuration](#configuration)
+      - [Docker container](#docker-container-4)
+      - [Configuration](#configuration-2)
       - [Give it a try](#give-it-a-try)
     - [Setup Radarr](#setup-radarr)
-      - [Docker container](#docker-container)
-      - [Configuration](#configuration)
-      - [Give it a try](#give-it-a-try)
+      - [Docker container](#docker-container-5)
+      - [Configuration](#configuration-3)
+      - [Give it a try](#give-it-a-try-1)
       - [Movie discovering](#movie-discovering)
     - [Setup Bazarr](#setup-bazarr)
       - [Bazarr Docker container](#bazarr-docker-container)
@@ -494,6 +494,9 @@ Let's run it !
 #### Configuration
 
 Plex Web UI should be available at `localhost:32400/web` (replace `localhost` by your server ip if needed).
+
+Note: If you are running on a headless server (e.g. Synology NAS) with container using host networking, you will need to use ssh tunneling to gain access and setup the server for first run. (see https://forums.plex.tv/t/i-did-something-stupid-please-plex-forums-your-my-only-hope/328481/11)
+
 You'll have to login first (registration is free), then Plex will ask you to add your libraries.
 I have two libraries:
 
