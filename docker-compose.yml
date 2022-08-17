@@ -129,4 +129,4 @@ services:
     environment:
       - WATCHTOWER_CLEANUP=true
       - TZ=Israel
-      - WATCHTOWER_SCHEDULE="0 0 4 * * *""
+      - WATCHTOWER_SCHEDULE=0 0 4 * * *
