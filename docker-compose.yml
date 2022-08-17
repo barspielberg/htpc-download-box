@@ -104,8 +104,6 @@ services:
       - ${ROOT}/config/plex/db:/config # plex database
       - ${ROOT}/config/plex/transcode:/transcode # temp transcoded files
       - ${ROOT}/complete:/data # media library
-    ports:
-      - 32400:32400 
 
   bazarr:
     container_name: bazarr
