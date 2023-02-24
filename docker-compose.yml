@@ -104,6 +104,7 @@ services:
       - ${ROOT}/config/plex/db:/config # plex database
       - ${ROOT}/config/plex/transcode:/transcode # temp transcoded files
       - ${ROOT}/complete:/data # media library
+      - /mnt/external:/external
 
   bazarr:
     container_name: bazarr
