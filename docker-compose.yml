@@ -73,7 +73,7 @@ services:
       - ${ROOT}/config/sonarr:/config # config files
       - ${ROOT}/complete/tv:/tv # tv shows folder
       - ${ROOT}/downloads:/downloads # download folder
-      - ${EXTERNAL}/media/tv:/external
+      - ${EXTERNAL}/media:/external
     ports:
       - 8989:8989
 
@@ -91,7 +91,7 @@ services:
       - ${ROOT}/config/radarr:/config # config files
       - ${ROOT}/complete/movies:/movies # movies folder
       - ${ROOT}/downloads:/downloads # download folder
-      - ${EXTERNAL}/media/movies:/external
+      - ${EXTERNAL}/media:/external
     ports:
       - 7878:7878
 
@@ -106,7 +106,7 @@ services:
       - ${ROOT}/config/plex/db:/config # plex database
       - ${ROOT}/config/plex/transcode:/transcode # temp transcoded files
       - ${ROOT}/complete:/data # media library
-      - ${EXTERNAL}:/external
+      - ${EXTERNAL}/media:/external
 
   jellyfin:
     container_name: jellyfin
@@ -137,6 +137,8 @@ services:
       - ${ROOT}/config/bazarr:/config # config files
       - ${ROOT}/complete/movies:/movies # movies folder
       - ${ROOT}/complete/tv:/tv # tv shows folder
+      - ${ROOT}/downloads:/downloads # download folder
+      - ${EXTERNAL}/media:/external
     ports:
       - 6767:6767
 
