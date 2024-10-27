@@ -108,20 +108,20 @@ services:
       - ${ROOT}/complete:/data # media library
       - ${EXTERNAL}/media:/external
 
-  jellyfin:
-    container_name: jellyfin
-    image: lscr.io/linuxserver/jellyfin
-    restart: unless-stopped    
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    volumes:
-      - ${ROOT}/config/jellyfin:/config
-      - ${ROOT}/complete:/data/inner
-      - ${EXTERNAL}:/data/external
-    ports:
-      - 8096:8096
+  # jellyfin:
+  #   container_name: jellyfin
+  #   image: lscr.io/linuxserver/jellyfin
+  #   restart: unless-stopped    
+  #   environment:
+  #     - PUID=${PUID}
+  #     - PGID=${PGID}
+  #     - TZ=${TZ}
+  #   volumes:
+  #     - ${ROOT}/config/jellyfin:/config
+  #     - ${ROOT}/complete:/data/inner
+  #     - ${EXTERNAL}:/data/external
+  #   ports:
+  #     - 8096:8096
 
   bazarr:
     container_name: bazarr
