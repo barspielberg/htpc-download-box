@@ -155,3 +155,17 @@ services:
       - WATCHTOWER_LIFECYCLE_HOOKS=1 # Enable pre/post-update scripts
       - WATCHTOWER_NOTIFICATIONS=shoutrrr
       - WATCHTOWER_NOTIFICATION_URL=${NOTIFICATION_URL}
+
+  telegram-bot:
+    container_name: telegram-bot
+    image: barspielberg/media-telegram-bot
+    restart: unless-stopped
+    environment:
+    - BOT_TOKEN=${BOT_TOKEN}
+    - SONARR_KEY=${SONARR_KEY}
+    - RADARR_KEY=${RADARR_KEY}
+    - SONARR_BASE_URL=${SONARR_BASE_URL}
+    - RADARR_BASE_URL=${RADARR_BASE_URL}
+    - ALLOWED_CHATS=${ALLOWED_CHATS}
+    - TIMEZONE=${TIMEZONE}
+    - NGROK_KEY=${NGROK_KEY}
