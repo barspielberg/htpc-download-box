@@ -150,7 +150,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - WATCHTOWER_CLEANUP=true
-      - TZ=Israel
+      - TZ=${TZ}
       - WATCHTOWER_SCHEDULE=0 0 4 * * *
       - WATCHTOWER_LIFECYCLE_HOOKS=1 # Enable pre/post-update scripts
       - WATCHTOWER_NOTIFICATIONS=shoutrrr
@@ -169,3 +169,15 @@ services:
     - ALLOWED_CHATS=${ALLOWED_CHATS}
     - TIMEZONE=${TIMEZONE}
     - NGROK_KEY=${NGROK_KEY}
+
+  flaresolverr:
+      container_name: flaresolverr
+      image: flaresolverr/flaresolverr
+      environment:
+        - LOG_LEVEL=${LOG_LEVEL:-info}
+        - LOG_HTML=${LOG_HTML:-false}
+        - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
+        - TZ=${TZ}
+      ports:
+        - "${PORT:-8191}:8191"
+      restart: unless-stopped
